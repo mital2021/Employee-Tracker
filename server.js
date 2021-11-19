@@ -1,9 +1,6 @@
-const fs = require('fs');
 const express = require('express');
 const db = require('./db/connection');
-const inquirer= require('inquirer');
-const apiRoutes = require('./routes/apiRoutes');
-
+const userInput = require ('./userInput');
 
 
 const PORT = process.env.PORT || 3001;
@@ -13,8 +10,6 @@ const app = express();
 // Express middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-
 
 //Use apiRoutes
 app.use('/api', apiRoutes);
@@ -29,8 +24,10 @@ app.use((req, res) => {
 // Start server after DB connection
 db.connect(err => {
   if (err) throw err;
-  console.log('Database connected.');
+  console.log('Database connected.')
+  
   app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
+    userInput();
   });
 });
