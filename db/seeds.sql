@@ -1,19 +1,19 @@
-INSERT INTO department (name)
+INSERT INTO department (id, name)
 values
-  ('Finance'),
-  ('Engineering'),
-  ('Sales'),
-  ('legal');
+  (1, 'Finance'),
+  (2, 'Engineering'),
+  (3, 'Sales'),
+  (4, 'legal');
 
-INSERT INTO employeerole (title, salary,department_id)
+INSERT INTO employeerole (id,title, salary,department_id)
 values
-('Accounting', 50000, 1),
-('Software Engineer', 80000, 2),
-('Sales', 50000, 3),
-('legal', 60000, 4),
-('Finance', 60000, 1),
-('Network Engineer', 80000, 2),
-('Administrator Assistant', 50000, 3);
+(1, 'Accounting', 50000, 1),
+(2, 'Software Engineer', 80000, 2),
+(3, 'Sales', 50000, 3),
+(4, 'legal', 60000, 4),
+(5, 'Finance', 60000, 1),
+(6, 'Network Engineer', 80000, 2),
+(7, 'Administrator Assistant', 50000, 3);
 
 
 
@@ -30,4 +30,3 @@ values
   (8, 'kevin','Tupik', 1, 5),
   (9, 'Mike','Chan', 2, 4),
   (10, 'Ashley','Rodriguez',3, 5);
-

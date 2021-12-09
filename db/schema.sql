@@ -1,33 +1,35 @@
 
-DROP TABLE IF EXISTS employeenameid;
-DROP TABLE IF EXISTS employeerole;
-DROP TABLE IF EXISTS department;
+DROP DATABASE IF EXISTS employee;
 
-CREATE TABLE department (
-  id INTEGER AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(30) NOT NULL
-  
-);
+CREATE DATABASE employee;
+USE employee;
 
 
-CREATE TABLE employeerole (
-  id INTEGER AUTO_INCREMENT PRIMARY KEY,
-  title VARCHAR(30) NOT NULL,
-  salary decimal NOT NULL,
-  department_id INTEGER,
-    CONSTRAINT mvDepartment FOREIGN KEY (department_id) REFERENCES department(id) ON DELETE CASCADE
-  
-);
 
-CREATE TABLE employeenameid(
-    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE employeenameid (
+    id INTEGER AUTO_INCREMENT PRIMARY KEY NOT NULL,
     first_name VARCHAR(30) NOT NULL,  
     last_name VARCHAR(30) NOT NULL,
     role_id INTEGER,
-    CONSTRAINT mvRole FOREIGN KEY (role_id) REFERENCES employeerole (department_id),
-    manager_id INTEGER, 
-     CONSTRAINT mvManager FOREIGN KEY (manager_id) REFERENCES employeenameid(id) ON DELETE SET NULL
+    manager_id INTEGER
 );  
+
+
+
+CREATE TABLE employeerole (
+  id INTEGER AUTO_INCREMENT PRIMARY KEY NOT NULL,
+  title VARCHAR(30) NOT NULL,
+  salary decimal (30) NOT NULL,
+  department_id INTEGER
+
+);
+
+
+CREATE TABLE department (
+  id INTEGER AUTO_INCREMENT PRIMARY KEY NOT NULL,
+  name VARCHAR(30) NOT NULL
+  
+);
 
 
 
