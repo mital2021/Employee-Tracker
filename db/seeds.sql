@@ -11,9 +11,7 @@ values
 (2, 'Software Engineer', 80000, 2),
 (3, 'Sales', 50000, 3),
 (4, 'legal', 60000, 4),
-(5, 'Finance', 60000, 1),
-(6, 'Network Engineer', 80000, 2),
-(7, 'Administrator Assistant', 50000, 3);
+
 
 
 
